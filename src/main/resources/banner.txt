@@ -1,0 +1,13 @@
+${AnsiColor.RED}
+${AnsiColor.RED} ██▀███  ▓█████  ███▄    █
+${AnsiColor.RED}▓██ ▒ ██▒▓█   ▀  ██ ▀█   █
+${AnsiColor.RED}▓██ ░▄█ ▒▒███   ▓██  ▀█ ██▒
+${AnsiColor.RED}▒██▀▀█▄  ▒▓█  ▄ ▓██▒  ▐▌██▒
+${AnsiColor.RED}░██▓ ▒██▒░▒████▒▒██░   ▓██░
+${AnsiColor.RED}░ ▒▓ ░▒▓░░░ ▒░ ░░ ▒░   ▒ ▒
+${AnsiColor.RED}  ░▒ ░ ▒░ ░ ░  ░░ ░░   ░ ▒░
+${AnsiColor.RED}  ░░   ░    ░      ░   ░ ░
+${AnsiColor.RED}   ░        ░  ░         ░
+${Ansi.RED} :: Spring Boot ${spring-boot.formatted-version} ::
+
+
