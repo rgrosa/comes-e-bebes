@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "7da80f4c-9798-4b09-aa59-f2663b094cb7",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9981836"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"admin\",\n    \"password\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Renan\",\n    \"password\": \"abc123\",\n    \"address\": \"Rua legal 123\",\n    \"registrationDocument\": \"123456789\",\n    \"restaurant\": {\n        \"restaurantName\": \"MISTER LANCHES\",\n        \"address\": \"rua bacana\",\n        \"workTime\": \"19:00 - 23:00\",\n        \"isOpen\": true\n    },\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/login/create-user/owner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"login",
+						"create-user",
+						"owner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"RenanZITO\",\n    \"password\": \"abc123\",\n    \"address\": \"Rua legal 123\",\n    \"registrationDocument\": \"123456789\",\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/login/create-user/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"login",
+						"create-user",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"itemName\": \"Hamburguer\",\n    \"description\": \"Pao e carne\",\n    \"price\": 19.99,\n    \"status\": true,\n    \"restaurantId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/restaurant/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"restaurant",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDA4ODAwMiwiaWF0IjoxNjk5NDgzMjAyfQ.iCtnp1mmLxOG8fv0qOg32F_xrQV2F4xZ4LVfkboQ1Nzgp2ZawGWttuW4ZRiML0AdiBlflun8m3B2mwjx6tHcQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/restaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDA4ODAwMiwiaWF0IjoxNjk5NDgzMjAyfQ.iCtnp1mmLxOG8fv0qOg32F_xrQV2F4xZ4LVfkboQ1Nzgp2ZawGWttuW4ZRiML0AdiBlflun8m3B2mwjx6tHcQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/restaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant by id owner id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDA4ODAwMiwiaWF0IjoxNjk5NDgzMjAyfQ.iCtnp1mmLxOG8fv0qOg32F_xrQV2F4xZ4LVfkboQ1Nzgp2ZawGWttuW4ZRiML0AdiBlflun8m3B2mwjx6tHcQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/restaurant?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"restaurant"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
