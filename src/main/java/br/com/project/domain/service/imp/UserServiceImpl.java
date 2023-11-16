@@ -87,6 +87,7 @@ public class UserServiceImpl implements UserService {
             restaurant.setAddress(createUserDTO.getRestaurant().getAddress());
             restaurant.setRestaurantName(createUserDTO.getRestaurant().getRestaurantName());
             restaurant.setWorkTime(createUserDTO.getRestaurant().getWorkTime());
+            restaurant.setRestaurantImage(createUserDTO.getRestaurant().getRestaurantImage());
             restaurant = restaurantRepository.save(restaurant);
             UserEntity user = new UserEntity();
             user.setAddress(createUserDTO.getAddress());

@@ -13,9 +13,11 @@ public class AdditionalItemRelEntity {
     private Long id;
     @Column(name = "ADDITIONAL_ITEM_ID")
     private Long additionalItemId;
+    @Column(name = "ITEM_ACQUISITION_REL_ID")
+    private Long itemAcquisitionRelId;
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
-    @Column(name = "CREATED_AT")
+    @Column(name = "INSERTED_AT")
     private LocalDateTime createdAt;
 
     @PrePersist
@@ -59,6 +61,14 @@ public class AdditionalItemRelEntity {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Long getItemAcquisitionRelId() {
+        return itemAcquisitionRelId;
+    }
+
+    public void setItemAcquisitionRelId(Long itemAcquisitionRelId) {
+        this.itemAcquisitionRelId = itemAcquisitionRelId;
     }
 }
 

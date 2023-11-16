@@ -12,7 +12,7 @@ public class AcquisitionEntity {
     @Column(name = "ID")
     private Long id;
     @Column(name = "CLIENT_ID")
-    private Double clientId;
+    private Long clientId;
     @Column(name = "PRICE")
     private Double price;
     @Column(name = "DESCRIPTION")
@@ -73,11 +73,11 @@ public class AcquisitionEntity {
         this.createdAt = createdAt;
     }
 
-    public Double getClientId() {
+    public Long getClientId() {
         return clientId;
     }
 
-    public void setClientId(Double clientId) {
+    public void setClientId(Long clientId) {
         this.clientId = clientId;
     }
 }

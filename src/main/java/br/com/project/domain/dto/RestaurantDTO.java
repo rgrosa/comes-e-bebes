@@ -8,6 +8,7 @@ public class RestaurantDTO {
     private String restaurantName;
     private String address;
     private String workTime;
+    private String restaurantImage;
     private List<ItemDTO> itemList;
 
     public String getRestaurantName() {
@@ -48,5 +49,13 @@ public class RestaurantDTO {
 
     public void setRestaurantId(Long restaurantId) {
         this.restaurantId = restaurantId;
+    }
+
+    public String getRestaurantImage() {
+        return restaurantImage;
+    }
+
+    public void setRestaurantImage(String restaurantImage) {
+        this.restaurantImage = restaurantImage;
     }
 }

@@ -1,18 +1,15 @@
 package br.com.project.domain.dto;
 
-
 import java.util.List;
 
-public class ItemDTO {
+public class ItemBoughtDTO {
 
     private Long itemId;
     private String itemName;
     private String description;
-    private Double price;
-    private boolean status;
+    private Double itemPrice;
+
     private List<AdditionalItemDTO> additionalItemList;
-    private Long restaurantId;
-    private String itemImage;
 
     public Long getItemId() {
         return itemId;
@@ -38,22 +35,6 @@ public class ItemDTO {
         this.description = description;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public List<AdditionalItemDTO> getAdditionalItemList() {
         return additionalItemList;
     }
@@ -62,19 +43,11 @@ public class ItemDTO {
         this.additionalItemList = additionalItemList;
     }
 
-    public Long getRestaurantId() {
-        return restaurantId;
+    public Double getItemPrice() {
+        return itemPrice;
     }
 
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public String getItemImage() {
-        return itemImage;
-    }
-
-    public void setItemImage(String itemImage) {
-        this.itemImage = itemImage;
+    public void setItemPrice(Double itemPrice) {
+        this.itemPrice = itemPrice;
     }
 }

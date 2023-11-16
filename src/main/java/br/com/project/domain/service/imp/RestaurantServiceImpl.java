@@ -52,6 +52,7 @@ public class RestaurantServiceImpl implements RestaurantService {
         restaurantDTO.setAddress(restaurant.getAddress());
         restaurantDTO.setWorkTime(restaurant.getWorkTime());
         restaurantDTO.setItemList(getItemList(restaurant.getId()));
+        restaurantDTO.setRestaurantImage(restaurant.getRestaurantImage());
         return restaurantDTO;
     }
 
@@ -69,8 +70,12 @@ public class RestaurantServiceImpl implements RestaurantService {
         itemEntity.setDescription(item.getDescription());
         itemEntity.setPrice(item.getPrice());
         itemEntity.setStatus(item.isStatus());
+        itemEntity.setItemImage(item.getItemImage());
         itemEntity = itemRepository.save(itemEntity);
-        saveAdditionalItem(item.getAdditionalItemList(), itemEntity.getId());
+        if(item.getAdditionalItemList() != null){
+            saveAdditionalItem(item.getAdditionalItemList(), itemEntity.getId());
+        }
+
 
         return getRestaurantById(item.getRestaurantId());
     }
@@ -110,6 +115,7 @@ public class RestaurantServiceImpl implements RestaurantService {
             additionalItemEntity.setDescription(additionalItem.getDescription());
             additionalItemEntity.setPrice(additionalItem.getPrice());
             additionalItemEntity.setStatus(additionalItem.isStatus());
+            additionalItemEntity.setAdditionalItemImage(additionalItem.getAdditionalItemImage());
             additionalItemRepository.save(additionalItemEntity);
         }
     }
@@ -127,6 +133,7 @@ public class RestaurantServiceImpl implements RestaurantService {
             itemDTO.setStatus(item.isStatus());
             itemDTO.setAdditionalItemList(getAdditionalItemList(item.getId()));
             itemDTO.setRestaurantId(id);
+            itemDTO.setItemImage(item.getItemImage());
             itemList.add(itemDTO);
         }
         return itemList;
@@ -143,6 +150,7 @@ public class RestaurantServiceImpl implements RestaurantService {
             additionalItemDTO.setPrice(additionalItem.getPrice());
             additionalItemDTO.setDescription(additionalItemDTO.getDescription());
             additionalItemDTO.setStatus(additionalItemDTO.isStatus());
+            additionalItemDTO.setAdditionalItemImage(additionalItemDTO.getAdditionalItemImage());
             additionalItemDTOList.add(additionalItemDTO);
         }
         return additionalItemDTOList;

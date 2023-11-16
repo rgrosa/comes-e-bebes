@@ -38,11 +38,14 @@
 		{
 			"name": "create Owner",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"Renan\",\n    \"password\": \"abc123\",\n    \"address\": \"Rua legal 123\",\n    \"registrationDocument\": \"123456789\",\n    \"restaurant\": {\n        \"restaurantName\": \"MISTER LANCHES\",\n        \"address\": \"rua bacana\",\n        \"workTime\": \"19:00 - 23:00\",\n        \"isOpen\": true\n    },\n    \"status\": true\n}",
+					"raw": "{\n    \"username\": \"Renan\",\n    \"password\": \"abc123\",\n    \"address\": \"Rua legal 123\",\n    \"registrationDocument\": \"123456789\",\n    \"restaurant\": {\n        \"restaurantName\": \"MISTER LANCHES\",\n        \"address\": \"rua bacana\",\n        \"workTime\": \"19:00 - 23:00\",\n        \"isOpen\": true,\n        \"restaurantImage\":\"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVEiJtZZPbBtFFMZ/M7ubXdtdb1xSFyeilBapySVU8h8OoFaooFSqiihIVIpQBKci6KEg9Q6H9kovIHoCIVQJJCKE1ENFjnAgcaSGC6rEnxBwA04Tx43t2FnvDAfjkNibxgHxnWb2e/u992bee7tCa00YFsffekFY+nUzFtjW0LrvjRXrCDIAaPLlW0nHL0SsZtVoaF98mLrx3pdhOqLtYPHChahZcYYO7KvPFxvRl5XPp1sN3adWiD1ZAqD6XYK1b/dvE5IWryTt2udLFedwc1+9kLp+vbbpoDh+6TklxBeAi9TL0taeWpdmZzQDry0AcO+jQ12RyohqqoYoo8RDwJrU+qXkjWtfi8Xxt58BdQuwQs9qC/afLwCw8tnQbqYAPsgxE1S6F3EAIXux2oQFKm0ihMsOF71dHYx+f3NND68ghCu1YIoePPQN1pGRABkJ6Bus96CutRZMydTl+TvuiRW1m3n0eDl0vRPcEysqdXn+jsQPsrHMquGeXEaY4Yk4wxWcY5V/9scqOMOVUFthatyTy8QyqwZ+kDURKoMWxNKr2EeqVKcTNOajqKoBgOE28U4tdQl5p5bwCw7BWquaZSzAPlwjlithJtp3pTImSqQRrb2Z8PHGigD4RZuNX6JYj6wj7O4TFLbCO/Mn/m8R+h6rYSUb3ekokRY6f/YukArN979jcW+V/S8g0eT/N3VN3kTqWbQ428m9/8k0P/1aIhF36PccEl6EhOcAUCrXKZXXWS3XKd2vc/TRBG9O5ELC17MmWubD2nKhUKZa26Ba2+D3P+4/MNCFwg59oWVeYhkzgN/JDR8deKBoD7Y+ljEjGZ0sosXVTvbc6RHirr2reNy1OXd6pJsQ+gqjk8VWFYmHrwBzW/n+uMPFiRwHB2I7ih8ciHFxIkd/3Omk5tCDV1t+2nNu5sxxpDFNx+huNhVT3/zMDz8usXC3ddaHBj1GHj/As08fwTS7Kt1HBTmyN29vdwAw+/wbwLVOJ3uAD1wi/dUH7Qei66PfyuRj4Ik9is+hglfbkbfR3cnZm7chlUWLdwmprtCohX4HUtlOcQjLYCu+fzGJH2QRKvP3UNz8bWk1qMxjGTOMThZ3kvgLI5AzFfo379UAAAAASUVORK5CYII=\"\n    },\n    \"status\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,13 +101,23 @@
 			"response": []
 		},
 		{
-			"name": "restaurant",
+			"name": "restaurant create item",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDc0MjcwNSwiaWF0IjoxNzAwMTM3OTA1fQ.aQMkj3wUivWF-qTN-iB0U-778Fz5BisveqcL7qebvcEoivaYXoSFOOh3sOUmlWGCpNyXxnijPZrfhTUYteRZ3w",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \n    \"itemName\": \"Hamburguer\",\n    \"description\": \"Pao e carne\",\n    \"price\": 19.99,\n    \"status\": true,\n    \"restaurantId\": 1\n}",
+					"raw": "{\n    \"itemName\": \"Refri KUATY\",\n    \"description\": \"nhami nhami geladinho\",\n    \"price\": 2,\n    \"status\": true,\n    \"restaurantId\": 1,\n    \"itemImage\":\"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVEiJtZZPbBtFFMZ/M7ubXdtdb1xSFyeilBapySVU8h8OoFaooFSqiihIVIpQBKci6KEg9Q6H9kovIHoCIVQJJCKE1ENFjnAgcaSGC6rEnxBwA04Tx43t2FnvDAfjkNibxgHxnWb2e/u992bee7tCa00YFsffekFY+nUzFtjW0LrvjRXrCDIAaPLlW0nHL0SsZtVoaF98mLrx3pdhOqLtYPHChahZcYYO7KvPFxvRl5XPp1sN3adWiD1ZAqD6XYK1b/dvE5IWryTt2udLFedwc1+9kLp+vbbpoDh+6TklxBeAi9TL0taeWpdmZzQDry0AcO+jQ12RyohqqoYoo8RDwJrU+qXkjWtfi8Xxt58BdQuwQs9qC/afLwCw8tnQbqYAPsgxE1S6F3EAIXux2oQFKm0ihMsOF71dHYx+f3NND68ghCu1YIoePPQN1pGRABkJ6Bus96CutRZMydTl+TvuiRW1m3n0eDl0vRPcEysqdXn+jsQPsrHMquGeXEaY4Yk4wxWcY5V/9scqOMOVUFthatyTy8QyqwZ+kDURKoMWxNKr2EeqVKcTNOajqKoBgOE28U4tdQl5p5bwCw7BWquaZSzAPlwjlithJtp3pTImSqQRrb2Z8PHGigD4RZuNX6JYj6wj7O4TFLbCO/Mn/m8R+h6rYSUb3ekokRY6f/YukArN979jcW+V/S8g0eT/N3VN3kTqWbQ428m9/8k0P/1aIhF36PccEl6EhOcAUCrXKZXXWS3XKd2vc/TRBG9O5ELC17MmWubD2nKhUKZa26Ba2+D3P+4/MNCFwg59oWVeYhkzgN/JDR8deKBoD7Y+ljEjGZ0sosXVTvbc6RHirr2reNy1OXd6pJsQ+gqjk8VWFYmHrwBzW/n+uMPFiRwHB2I7ih8ciHFxIkd/3Omk5tCDV1t+2nNu5sxxpDFNx+huNhVT3/zMDz8usXC3ddaHBj1GHj/As08fwTS7Kt1HBTmyN29vdwAw+/wbwLVOJ3uAD1wi/dUH7Qei66PfyuRj4Ik9is+hglfbkbfR3cnZm7chlUWLdwmprtCohX4HUtlOcQjLYCu+fzGJH2QRKvP3UNz8bWk1qMxjGTOMThZ3kvgLI5AzFfo379UAAAAASUVORK5CYII=\",\n    \"additionalItemList\": [{\n        \"additionalItemName\": \"Gelo\",\n        \"description\": \"gelo gelado\",\n        \"price\": 0.50,\n        \"status\": true\n    }\n    \n     ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -128,6 +141,45 @@
 			"response": []
 		},
 		{
+			"name": "acquisition",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSZW5hblpJVE8iLCJleHAiOjE3MDA2MDUyODcsImlhdCI6MTcwMDAwMDQ4N30.RoxYkFM2b8VY36OxK-uwgIheC3cw2bteHH42K6CrmXck2RBALyW0G7IIQ4UksDvT2OTu95jMZoa8V5XNNf2-Qw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \n    \"description\": \"Deixar com o porteiro\",\n    \"clientId\" : 2,\n    \"itemAcquisition\":[{\n        \"description\": \"sem presunto\",\n        \"item\":{\n            \"price\":25,\n            \"itemId\":1,\n            \"additionalItemList\":[{\n                \"additionalItemId\": 1\n            }]\n\n        }\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/acquisition",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"acquisition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "restaurant list",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -138,7 +190,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDA4ODAwMiwiaWF0IjoxNjk5NDgzMjAyfQ.iCtnp1mmLxOG8fv0qOg32F_xrQV2F4xZ4LVfkboQ1Nzgp2ZawGWttuW4ZRiML0AdiBlflun8m3B2mwjx6tHcQw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDc0MjcwNSwiaWF0IjoxNzAwMTM3OTA1fQ.aQMkj3wUivWF-qTN-iB0U-778Fz5BisveqcL7qebvcEoivaYXoSFOOh3sOUmlWGCpNyXxnijPZrfhTUYteRZ3w",
 							"type": "string"
 						}
 					]
@@ -197,7 +249,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/comes-bebes/restaurant",
+					"raw": "http://localhost:8001/comes-bebes/restaurant/by-id?restaurantId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -205,7 +257,14 @@
 					"port": "8001",
 					"path": [
 						"comes-bebes",
-						"restaurant"
+						"restaurant",
+						"by-id"
+					],
+					"query": [
+						{
+							"key": "restaurantId",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -213,6 +272,55 @@
 		},
 		{
 			"name": "restaurant by id owner id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDc0MjcwNSwiaWF0IjoxNzAwMTM3OTA1fQ.aQMkj3wUivWF-qTN-iB0U-778Fz5BisveqcL7qebvcEoivaYXoSFOOh3sOUmlWGCpNyXxnijPZrfhTUYteRZ3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/comes-bebes/restaurant/user-id?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"comes-bebes",
+						"restaurant",
+						"user-id"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acquisition history",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -239,7 +347,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8001/comes-bebes/restaurant?userId=1",
+					"raw": "http://localhost:8001/comes-bebes/acquisition/history?userId=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -247,12 +355,13 @@
 					"port": "8001",
 					"path": [
 						"comes-bebes",
-						"restaurant"
+						"acquisition",
+						"history"
 					],
 					"query": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}

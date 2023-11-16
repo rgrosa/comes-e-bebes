@@ -21,6 +21,8 @@ public class AdditionalItemEntity {
     private boolean status;
     @Column(name = "ITEM_ID")
     private Long itemId;
+    @Column(name = "ADDITIONAL_ITEM_IMAGE")
+    private String additionalItemImage;
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
     @Column(name = "INSERTED_AT")
@@ -99,5 +101,13 @@ public class AdditionalItemEntity {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getAdditionalItemImage() {
+        return additionalItemImage;
+    }
+
+    public void setAdditionalItemImage(String additionalItemImage) {
+        this.additionalItemImage = additionalItemImage;
     }
 }

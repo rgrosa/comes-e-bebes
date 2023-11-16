@@ -1,7 +1,5 @@
 package br.com.project.domain.dto;
 
-import java.util.List;
-
 public class AdditionalItemDTO {
 
     private Long additionalItemId;
@@ -9,6 +7,7 @@ public class AdditionalItemDTO {
     private String description;
     private Double price;
     private boolean status;
+    private String additionalItemImage;
 
     public Long getAdditionalItemId() {
         return additionalItemId;
@@ -48,5 +47,13 @@ public class AdditionalItemDTO {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public String getAdditionalItemImage() {
+        return additionalItemImage;
+    }
+
+    public void setAdditionalItemImage(String additionalItemImage) {
+        this.additionalItemImage = additionalItemImage;
     }
 }

@@ -6,19 +6,10 @@ import java.util.List;
 
 public class AcquisitionDTO {
 
-    private Double price;
     private String description;
     private Long clientId;
     private List<ItemAcquisitionDTO> itemAcquisition;
 
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
 
     public String getDescription() {
         return description;

@@ -16,6 +16,8 @@ public class ItemEntity {
     private String description;
     @Column(name = "PRICE")
     private Double price;
+    @Column(name = "ITEM_IMAGE")
+    private String itemImage;
     @Column(name = "STATUS")
     private boolean status;
     @Column(name = "RESTAURANT_ID")
@@ -98,5 +100,13 @@ public class ItemEntity {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
     }
 }

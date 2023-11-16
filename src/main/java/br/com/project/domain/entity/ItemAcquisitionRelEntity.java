@@ -17,8 +17,6 @@ public class ItemAcquisitionRelEntity {
     private Long acquisitionId;
     @Column(name = "DESCRIPTION")
     private String description;
-    @Column(name = "ADDITIONAL_ITEM_REL_ID")
-    private Long additionalItemRelId;
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
     @Column(name = "INSERTED_AT")
@@ -67,13 +65,6 @@ public class ItemAcquisitionRelEntity {
         this.description = description;
     }
 
-    public Long getAdditionalItemRelId() {
-        return additionalItemRelId;
-    }
-
-    public void setAdditionalItemRelId(Long additionalItemRelId) {
-        this.additionalItemRelId = additionalItemRelId;
-    }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;

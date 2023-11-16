@@ -17,6 +17,8 @@ public class RestaurantEntity {
     private String address;
     @Column(name = "WORK_TIME")
     private String workTime;
+    @Column(name = "RESTAURANT_IMAGE")
+    private String restaurantImage;
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
     @Column(name = "INSERTED_AT")
@@ -80,5 +82,13 @@ public class RestaurantEntity {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getRestaurantImage() {
+        return restaurantImage;
+    }
+
+    public void setRestaurantImage(String restaurantImage) {
+        this.restaurantImage = restaurantImage;
     }
 }
